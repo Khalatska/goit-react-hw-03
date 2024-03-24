@@ -1,0 +1,17 @@
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 38px;
+}
+
+.inputSearch {
+  width: 300px;
+  border: 2px solid gray;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.inputText {
+  margin: 0;
+}
