@@ -13,8 +13,7 @@ li {
 }
 
 .titleMain {
-  margin: 0;
-  margin-left: 42px;
-  margin-top: 12px;
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -36,15 +36,19 @@ const ContactForm = ({ addContact }) => {
           <label>
             <span>Name</span>
             <br />
-            <Field type="text" name="name"></Field>
-            <ErrorMessage component="p" name="name" />
+            <Field type="text" name="name" className={css.formInput}></Field>
+            <ErrorMessage className={css.message} component="p" name="name" />
           </label>
-          <br />
+
           <label>
             <span>Number</span>
             <br />
-            <Field type="text" name="number"></Field>
-            <ErrorMessage component="p" name="number" />
+            <Field
+              type="number"
+              name="number"
+              className={css.formInput}
+            ></Field>
+            <ErrorMessage className={css.message} component="p" name="number" />
           </label>
           <button type="submit" className={css.formBtn}>
             Add contact
