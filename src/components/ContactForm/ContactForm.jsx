@@ -3,10 +3,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { MAX_CHAR_NAME_VALIDATION } from "../../utils/constants";
 import { MIN_CHAR_NAME_VALIDATION } from "../../utils/constants";
+import css from "./ContactForm.module.css";
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
-    .required("Name is required!")
     .max(
       MAX_CHAR_NAME_VALIDATION,
       `Your user name must be less than ${MAX_CHAR_NAME_VALIDATION} characters!`
@@ -14,7 +14,8 @@ const FeedbackSchema = Yup.object().shape({
     .min(
       MIN_CHAR_NAME_VALIDATION,
       `Your user name must be less than ${MIN_CHAR_NAME_VALIDATION} characters!`
-    ),
+    )
+    .required("Name is required!"),
   number: Yup.string().required("Number is required!"),
 });
 
@@ -31,7 +32,7 @@ const ContactForm = ({ addContact }) => {
         onSubmit={handleSubmit}
         validationSchema={FeedbackSchema}
       >
-        <Form>
+        <Form className={css.form}>
           <label>
             <span>Name</span>
             <br />
@@ -45,7 +46,9 @@ const ContactForm = ({ addContact }) => {
             <Field type="text" name="number"></Field>
             <ErrorMessage component="p" name="number" />
           </label>
-          <button type="submit">Add contact</button>
+          <button type="submit" className={css.formBtn}>
+            Add contact
+          </button>
         </Form>
       </Formik>
     </div>
